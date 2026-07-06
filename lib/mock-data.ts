@@ -23,6 +23,8 @@ export type Product = {
   level: "ssc" | "hsc" | null;
   /** board paper number — used by the ১ম/২য় পত্র filter tabs */
   paper: 1 | 2 | null;
+  /** most-sold subjects get a badge on the cover */
+  bestSeller?: boolean;
   soldOut: boolean;
   category: string;
 };
@@ -52,9 +54,9 @@ export const products: Product[] = [
   // --- SSC (single-paper subjects) ---
   { id: "s1", name: { en: "Physics", bn: "পদার্থবিজ্ঞান" }, slug: "ssc-physics", priceMin: 310, priceMax: null, subject: "physics", level: "ssc", paper: null, soldOut: false, category: "ssc-khata" },
   { id: "s2", name: { en: "Chemistry", bn: "রসায়ন" }, slug: "ssc-chemistry", priceMin: 310, priceMax: null, subject: "chemistry", level: "ssc", paper: null, soldOut: false, category: "ssc-khata" },
-  { id: "s3", name: { en: "Biology", bn: "জীববিজ্ঞান" }, slug: "ssc-biology", priceMin: 385, priceMax: null, subject: "biology", level: "ssc", paper: null, soldOut: false, category: "ssc-khata" },
+  { id: "s3", name: { en: "Biology", bn: "জীববিজ্ঞান" }, slug: "ssc-biology", priceMin: 385, priceMax: null, subject: "biology", level: "ssc", paper: null, bestSeller: true, soldOut: false, category: "ssc-khata" },
   { id: "s4", name: { en: "Higher Math", bn: "উচ্চতর গণিত" }, slug: "ssc-higher-math", priceMin: 310, priceMax: null, subject: "math", level: "ssc", paper: null, soldOut: false, category: "ssc-khata" },
-  { id: "s5", name: { en: "ICT", bn: "আইসিটি" }, slug: "ssc-ict", priceMin: 350, priceMax: null, subject: "ict", level: "ssc", paper: null, soldOut: false, category: "ssc-khata" },
+  { id: "s5", name: { en: "ICT", bn: "আইসিটি" }, slug: "ssc-ict", priceMin: 350, priceMax: null, subject: "ict", level: "ssc", paper: null, bestSeller: true, soldOut: false, category: "ssc-khata" },
   { id: "s6", name: { en: "Agriculture Studies", bn: "কৃষিশিক্ষা" }, slug: "ssc-agriculture", priceMin: 350, priceMax: null, subject: "agriculture", level: "ssc", paper: null, soldOut: false, category: "ssc-khata" },
 
   // --- HSC (two papers per subject) ---
@@ -62,11 +64,11 @@ export const products: Product[] = [
   { id: "h2", name: { en: "Physics 2nd Paper", bn: "পদার্থবিজ্ঞান ২য় পত্র" }, slug: "hsc-physics-2", priceMin: 310, priceMax: null, subject: "physics", level: "hsc", paper: 2, soldOut: false, category: "hsc-khata" },
   { id: "h3", name: { en: "Chemistry 1st Paper", bn: "রসায়ন ১ম পত্র" }, slug: "hsc-chemistry-1", priceMin: 310, priceMax: null, subject: "chemistry", level: "hsc", paper: 1, soldOut: false, category: "hsc-khata" },
   { id: "h4", name: { en: "Chemistry 2nd Paper", bn: "রসায়ন ২য় পত্র" }, slug: "hsc-chemistry-2", priceMin: 310, priceMax: null, subject: "chemistry", level: "hsc", paper: 2, soldOut: false, category: "hsc-khata" },
-  { id: "h5", name: { en: "Biology 1st Paper", bn: "জীববিজ্ঞান ১ম পত্র" }, slug: "hsc-biology-1", priceMin: 385, priceMax: null, subject: "biology", level: "hsc", paper: 1, soldOut: false, category: "hsc-khata" },
-  { id: "h6", name: { en: "Biology 2nd Paper", bn: "জীববিজ্ঞান ২য় পত্র" }, slug: "hsc-biology-2", priceMin: 465, priceMax: null, subject: "biology", level: "hsc", paper: 2, soldOut: false, category: "hsc-khata" },
+  { id: "h5", name: { en: "Biology 1st Paper", bn: "জীববিজ্ঞান ১ম পত্র" }, slug: "hsc-biology-1", priceMin: 385, priceMax: null, subject: "biology", level: "hsc", paper: 1, bestSeller: true, soldOut: false, category: "hsc-khata" },
+  { id: "h6", name: { en: "Biology 2nd Paper", bn: "জীববিজ্ঞান ২য় পত্র" }, slug: "hsc-biology-2", priceMin: 465, priceMax: null, subject: "biology", level: "hsc", paper: 2, bestSeller: true, soldOut: false, category: "hsc-khata" },
   { id: "h7", name: { en: "Higher Math 1st Paper", bn: "উচ্চতর গণিত ১ম পত্র" }, slug: "hsc-math-1", priceMin: 310, priceMax: null, subject: "math", level: "hsc", paper: 1, soldOut: false, category: "hsc-khata" },
   { id: "h8", name: { en: "Higher Math 2nd Paper", bn: "উচ্চতর গণিত ২য় পত্র" }, slug: "hsc-math-2", priceMin: 310, priceMax: null, subject: "math", level: "hsc", paper: 2, soldOut: false, category: "hsc-khata" },
-  { id: "h9", name: { en: "ICT", bn: "আইসিটি" }, slug: "hsc-ict", priceMin: 350, priceMax: null, subject: "ict", level: "hsc", paper: null, soldOut: false, category: "hsc-khata" },
+  { id: "h9", name: { en: "ICT", bn: "আইসিটি" }, slug: "hsc-ict", priceMin: 350, priceMax: null, subject: "ict", level: "hsc", paper: null, bestSeller: true, soldOut: false, category: "hsc-khata" },
   { id: "h10", name: { en: "Agriculture Studies", bn: "কৃষিশিক্ষা" }, slug: "hsc-agriculture", priceMin: 350, priceMax: null, subject: "agriculture", level: "hsc", paper: null, soldOut: false, category: "hsc-khata" },
 
   // --- Full package & assignments ---

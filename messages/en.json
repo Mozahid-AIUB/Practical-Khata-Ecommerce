@@ -16,9 +16,16 @@
     "wishlist": "Wishlist",
     "cart": "Cart",
     "account": "Account",
-    "callUs": "Call or WhatsApp",
-    "announce": "Custom khata service — send your PDF & index, we handwrite it exactly to board standard",
-    "announceCta": "Place a custom order"
+    "callUs": "Call or WhatsApp"
+  },
+  "marquee": {
+    "i1": "SSC & HSC practical khata",
+    "i2": "Physics · Chemistry · Biology · Higher Math · ICT · Agriculture",
+    "i3": "Professional handwriting",
+    "i4": "Perfect figures & diagrams",
+    "i5": "Fast delivery nationwide",
+    "i6": "Top quality at the lowest price",
+    "i7": "Custom khata — send a PDF & index, we write it exactly"
   },
   "sidebar": {
     "menu": "Khata List",
@@ -37,7 +44,7 @@
     "from": "Each khata from just ৳310",
     "cta": "Order your khata",
     "ctaSecondary": "See the full package",
-    "marks": "10/10"
+    "marks": "25/25"
   },
   "bundle": {
     "eyebrow": "Special Launch Offer",
@@ -87,6 +94,7 @@
     "addToCart": "Add to cart",
     "outOfStock": "Out of stock",
     "soldOut": "Sold out",
+    "bestSeller": "Best Seller",
     "ssc": "SSC",
     "hsc": "HSC"
   },

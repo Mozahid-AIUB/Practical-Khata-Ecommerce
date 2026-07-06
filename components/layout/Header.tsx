@@ -6,6 +6,33 @@ import { useLocale, useTranslations } from "next-intl";
 import { Search, Heart, ShoppingCart, User, PenLine, Menu, X, Phone } from "lucide-react";
 import { LanguageToggle } from "./LanguageToggle";
 
+const MARQUEE_ITEMS = ["i1", "i2", "i3", "i4", "i5", "i6", "i7"] as const;
+
+function MarqueeStrip() {
+  const t = useTranslations("marquee");
+  const items = (copy: number) => (
+    <div className="flex shrink-0 items-center" aria-hidden={copy > 0 || undefined}>
+      {MARQUEE_ITEMS.map((key) => (
+        <span key={key} className="flex items-center whitespace-nowrap">
+          <span className="mx-5 text-accent-400" aria-hidden>
+            ✦
+          </span>
+          {t(key)}
+        </span>
+      ))}
+    </div>
+  );
+
+  return (
+    <div className="overflow-hidden bg-ink-950 py-2 text-xs font-semibold text-white/90">
+      <div className="marquee-track flex w-max">
+        {items(0)}
+        {items(1)}
+      </div>
+    </div>
+  );
+}
+
 export function Header() {
   const locale = useLocale();
   const tNav = useTranslations("nav");
@@ -23,6 +50,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-[#fdfcf9]/95 text-ink-900 shadow-sm backdrop-blur">
+      <MarqueeStrip />
       <div className="mx-auto max-w-7xl px-4">
         {/* top bar: logo · nav · phone + toggle */}
         <div className="flex items-center justify-between gap-4 py-3">
@@ -93,18 +121,6 @@ export function Header() {
               <User className="h-6 w-6" />
             </button>
           </div>
-        </div>
-
-        {/* custom-khata service announcement */}
-        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 pb-2.5 text-center text-xs font-medium text-ink-800/70">
-          <PenLine className="h-3.5 w-3.5 shrink-0 text-accent-500" aria-hidden />
-          <span>{tHeader("announce")}</span>
-          <Link
-            href={p("/shop?category=full-set")}
-            className="font-bold text-brand-600 underline decoration-brand-300 underline-offset-2 transition hover:text-brand-700"
-          >
-            {tHeader("announceCta")} →
-          </Link>
         </div>
 
         {/* mobile nav drawer */}

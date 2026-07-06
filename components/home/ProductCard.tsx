@@ -23,11 +23,17 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="relative w-full overflow-hidden">
         <SubjectCover product={product} />
 
-        {/* discount badge — top left */}
-        {discount && (
+        {/* discount / best-seller badge — top left */}
+        {discount ? (
           <span className="absolute left-2 top-2 rounded bg-accent-500 px-2 py-1 text-xs font-bold text-white shadow">
             -{discount}%
           </span>
+        ) : (
+          product.bestSeller && (
+            <span className="absolute left-2 top-2 rounded bg-amber-400 px-2 py-1 text-xs font-bold text-ink-900 shadow">
+              ★ {t("bestSeller")}
+            </span>
+          )
         )}
 
         {/* hover action icons — slide in from the right */}
