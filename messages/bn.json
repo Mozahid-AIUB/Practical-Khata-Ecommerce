@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "home": "হোম",
+    "shop": "খাতা",
+    "about": "আমাদের সম্পর্কে",
+    "contact": "যোগাযোগ",
+    "track": "অর্ডার ট্র্যাক"
+  },
+  "comingSoon": {
+    "title": "শীঘ্রই আসছে",
+    "text": "এই পেজটি তৈরি হচ্ছে। একটু পরে আবার দেখুন।",
+    "back": "হোমে ফিরে যান"
+  },
+  "header": {
+    "searchPlaceholder": "কোন খাতা খুঁজছেন? যেমন: HSC পদার্থবিজ্ঞান ১ম পত্র",
+    "wishlist": "উইশলিস্ট",
+    "cart": "কার্ট",
+    "account": "অ্যাকাউন্ট",
+    "callUs": "কল বা WhatsApp"
+  },
+  "sidebar": {
+    "menu": "খাতার তালিকা",
+    "step1": "১. খাতা বাছাই করুন",
+    "step2": "২. bKash/Nagad-এ পেমেন্ট",
+    "step3": "৩. ২-৩ দিনে হোম ডেলিভারি"
+  },
+  "hero": {
+    "stamp": "SSC · HSC",
+    "titleA": "হাতে লেখা প্র্যাকটিক্যাল খাতা,",
+    "titleB": "জমা দেওয়ার জন্য একদম রেডি",
+    "tick1": "Professional হ্যান্ডরাইটিং",
+    "tick2": "Perfect ফিগার ও ডায়াগ্রাম",
+    "tick3": "সারাদেশে ২-৩ দিনে ডেলিভারি",
+    "tick4": "১০০% Neat ও Error-Free",
+    "from": "প্রতি খাতা মাত্র ৳৩১০ থেকে",
+    "cta": "খাতা অর্ডার করুন",
+    "ctaSecondary": "ফুল সেট দেখুন",
+    "marks": "১০/১০"
+  },
+  "bundle": {
+    "eyebrow": "স্পেশাল লঞ্চ অফার",
+    "title": "PCMB + ICT ফুল প্যাকেজ",
+    "subtitle": "প্র্যাকটিক্যাল + ড্রয়িং খাতা — HSC ২০২৬ ও ২০২৭ ব্যাচ",
+    "item1": "৫টি বিষয়ের সম্পূর্ণ খাতা এক প্যাকেজে",
+    "item2": "100% Board-Standard Format",
+    "item3": "শুধু টপিক বা PDF পাঠান — বাকিটা আমাদের দায়িত্ব",
+    "price": "৳৩,০৬০",
+    "oldPrice": "৳৪,৫০০",
+    "offer": "অফার শেষ: ৩০ এপ্রিল",
+    "cta": "ফুল প্যাকেজ অর্ডার করুন",
+    "note": "WhatsApp: 01611-987955"
+  },
+  "sections": {
+    "topSellers": "বেস্ট সেলার",
+    "viewAll": "সব দেখুন",
+    "loadMore": "আরও খাতা দেখুন",
+    "tabAll": "সকল",
+    "tabFirst": "১ম পত্র",
+    "tabSecond": "২য় পত্র"
+  },
+  "testimonials": {
+    "heading": "শিক্ষার্থীরা যা বলছে",
+    "sub": "১,২০০+ শিক্ষার্থীর ভরসা · রেটিং ৪.৯/৫",
+    "q1": "Biology খাতা এত সুন্দর হয়েছে যে আমার teacher ভেবেছিলেন printed!",
+    "n1": "রাফিউল আলম",
+    "r1": "HSC ২০২৫, ঢাকা",
+    "q2": "Physics diagram গুলো perfect। Delivery-ও অনেক fast।",
+    "n2": "তাসনিম ইসলাম",
+    "r2": "SSC ২০২৫, চট্টগ্রাম",
+    "q3": "PCMB + ICT ফুল সেট নিয়েছিলাম। সব subject-এ perfect।",
+    "n3": "মেহেদী হাসান",
+    "r3": "HSC ২০২৫, সিলেট"
+  },
+  "trust": {
+    "deliveryTitle": "দ্রুত ডেলিভারি",
+    "deliveryText": "সারাদেশে ২-৩ দিন, ঢাকায় ১-২ দিন",
+    "paymentTitle": "সহজ পেমেন্ট",
+    "paymentText": "bKash · Nagad · Rocket",
+    "studentsTitle": "১,২০০+ শিক্ষার্থী",
+    "studentsText": "রেটিং ৪.৯/৫ — সারা বাংলাদেশে",
+    "qualityTitle": "১০০% Neat ও Error-Free",
+    "qualityText": "পছন্দ না হলে ফ্রি সংশোধন"
+  },
+  "product": {
+    "addToCart": "কার্টে যোগ করুন",
+    "outOfStock": "স্টক নেই",
+    "soldOut": "স্টক আউট",
+    "ssc": "SSC",
+    "hsc": "HSC"
+  },
+  "footer": {
+    "tagline": "তোমার খাতা, আমাদের হাতের লেখা।",
+    "quickLinks": "প্রয়োজনীয় লিংক",
+    "followUs": "আমাদের সোশ্যাল লিংক",
+    "rights": "সর্বস্বত্ব সংরক্ষিত।",
+    "questions": "কোনো প্রশ্ন? কল বা WhatsApp করুন ২৪/৭",
+    "delivery": "সারাদেশে হোম ডেলিভারি — অগ্রিম পেমেন্টে অর্ডার কনফার্ম",
+    "paymentSystem": "পেমেন্ট সিস্টেম",
+    "shippingSystem": "শিপিং সিস্টেম",
+    "about": "আমাদের সম্পর্কে",
+    "contactUs": "যোগাযোগ",
+    "privacy": "প্রাইভেসি পলিসি",
+    "returns": "রিটার্ন ও সংশোধন",
+    "terms": "শর্তাবলী",
+    "track": "অর্ডার ট্র্যাক"
+  }
+}

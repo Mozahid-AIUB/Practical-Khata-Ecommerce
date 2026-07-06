@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  /* exercise-book paper */
+  --background: #fbfaf6;
+  --foreground: #23272f;
+  /* the pale blue rule lines of a khata page */
+  --rule: #ccdbeb;
+  /* the red margin line */
+  --margin: #d94f4f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* body: Hind Siliguri · display: Baloo Da 2 (both cover Bengali + Latin) */
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+
+  /* brand — ballpoint blue */
+  --color-brand-50: #eef4fb;
+  --color-brand-100: #dce8f7;
+  --color-brand-200: #b9d0ee;
+  --color-brand-300: #8fb1e0;
+  --color-brand-400: #6690cf;
+  --color-brand-500: #3d6cb9;
+  --color-brand-600: #2b56a3;
+  --color-brand-700: #234687;
+  --color-brand-800: #1d3a6e;
+  --color-brand-900: #172d55;
+
+  /* graphite — dark pencil for header/footer/body ink */
+  --color-ink-800: #262a33;
+  --color-ink-900: #1d2129;
+  --color-ink-950: #14171d;
+
+  /* accent — the khata's red margin: offers, badges, counts */
+  --color-accent-400: #e26860;
+  --color-accent-500: #d94f4f;
+  --color-accent-600: #b93c3c;
+
+  /* the teacher's green tick — success/guarantee marks only */
+  --color-tick-500: #2e8b57;
+  --color-tick-600: #247247;
+
+  --color-rule: var(--rule);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ruled khata page: pale blue lines every 2rem, aligned to a 2rem leading */
+.khata-rules {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent calc(2rem - 1px),
+    var(--rule) calc(2rem - 1px),
+    var(--rule) 2rem
+  );
+}
+
+/* the red double margin line down the left of a khata page */
+.khata-margin {
+  position: relative;
+}
+.khata-margin::before,
+.khata-margin::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: var(--margin);
+  pointer-events: none;
+}
+.khata-margin::before {
+  left: 3.25rem;
+  opacity: 0.75;
+}
+.khata-margin::after {
+  left: calc(3.25rem + 6px);
+  opacity: 0.35;
+}
+
+/* premium soft shadow for product cards — layered, low-opacity */
+.card-premium {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card-premium:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1px 2px rgba(23, 45, 85, 0.06),
+    0 12px 28px -8px rgba(23, 45, 85, 0.22);
+}
+
+/* strip the browser's native search clear button / extra padding so the
+   search input sits flush against its submit button */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}

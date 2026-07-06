@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "home": "Home",
+    "shop": "Khata",
+    "about": "About Us",
+    "contact": "Contact",
+    "track": "Track Order"
+  },
+  "comingSoon": {
+    "title": "Coming soon",
+    "text": "This page is being written up. Check back shortly.",
+    "back": "Back to home"
+  },
+  "header": {
+    "searchPlaceholder": "Which khata do you need? e.g. HSC Physics 1st Paper",
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "account": "Account",
+    "callUs": "Call or WhatsApp"
+  },
+  "sidebar": {
+    "menu": "Khata List",
+    "step1": "1. Pick your khata",
+    "step2": "2. Pay via bKash/Nagad",
+    "step3": "3. Home delivery in 2-3 days"
+  },
+  "hero": {
+    "stamp": "SSC · HSC",
+    "titleA": "Handwritten practical khata,",
+    "titleB": "ready to submit",
+    "tick1": "Professional handwriting",
+    "tick2": "Perfect figures & diagrams",
+    "tick3": "Nationwide delivery in 2-3 days",
+    "tick4": "100% neat & error-free",
+    "from": "Each khata from just ৳310",
+    "cta": "Order your khata",
+    "ctaSecondary": "See the full set",
+    "marks": "10/10"
+  },
+  "bundle": {
+    "eyebrow": "Special Launch Offer",
+    "title": "PCMB + ICT Full Package",
+    "subtitle": "Practical + drawing khata — HSC 2026 & 2027 batch",
+    "item1": "Complete khata for all 5 subjects",
+    "item2": "100% board-standard format",
+    "item3": "Just send the topics or a PDF — we handle the rest",
+    "price": "৳3,060",
+    "oldPrice": "৳4,500",
+    "offer": "Offer ends: April 30",
+    "cta": "Order the full package",
+    "note": "WhatsApp: 01611-987955"
+  },
+  "sections": {
+    "topSellers": "Best Sellers",
+    "viewAll": "View all",
+    "loadMore": "Load more khata",
+    "tabAll": "All",
+    "tabFirst": "1st Paper",
+    "tabSecond": "2nd Paper"
+  },
+  "testimonials": {
+    "heading": "What students say",
+    "sub": "Trusted by 1,200+ students · Rated 4.9/5",
+    "q1": "My Biology khata came out so clean my teacher thought it was printed!",
+    "n1": "Rafiul Alam",
+    "r1": "HSC 2025, Dhaka",
+    "q2": "The Physics diagrams are perfect. Delivery was really fast too.",
+    "n2": "Tasnim Islam",
+    "r2": "SSC 2025, Chattogram",
+    "q3": "I took the PCMB + ICT full set. Perfect in every subject.",
+    "n3": "Mehedi Hasan",
+    "r3": "HSC 2025, Sylhet"
+  },
+  "trust": {
+    "deliveryTitle": "Fast Delivery",
+    "deliveryText": "2-3 days nationwide, 1-2 days in Dhaka",
+    "paymentTitle": "Easy Payment",
+    "paymentText": "bKash · Nagad · Rocket",
+    "studentsTitle": "1,200+ Students",
+    "studentsText": "Rated 4.9/5 across Bangladesh",
+    "qualityTitle": "100% Neat & Error-Free",
+    "qualityText": "Free correction if you're not happy"
+  },
+  "product": {
+    "addToCart": "Add to cart",
+    "outOfStock": "Out of stock",
+    "soldOut": "Sold out",
+    "ssc": "SSC",
+    "hsc": "HSC"
+  },
+  "footer": {
+    "tagline": "Your khata, our handwriting.",
+    "quickLinks": "Useful Links",
+    "followUs": "Our Social Links",
+    "rights": "All rights reserved.",
+    "questions": "Have questions? Call or WhatsApp 24/7",
+    "delivery": "Home delivery nationwide — orders confirmed on advance payment",
+    "paymentSystem": "Payment System",
+    "shippingSystem": "Shipping System",
+    "about": "About Us",
+    "contactUs": "Contact",
+    "privacy": "Privacy Policy",
+    "returns": "Returns & Corrections",
+    "terms": "Terms & Conditions",
+    "track": "Track Order"
+  }
+}
