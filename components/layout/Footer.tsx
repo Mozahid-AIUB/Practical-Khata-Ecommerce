@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Facebook, Instagram } from "./SocialIcons";
-import { PAYMENT_METHODS, SHIPPING_PARTNERS } from "./PaymentIcons";
+import { Bkash, Nagad, Rocket, SHIPPING_PARTNERS } from "./PaymentIcons";
+
+const PAYMENT_METHODS = [Bkash, Nagad, Rocket] as const;
 import { getCategories, getProductsByCategory, type Localized } from "@/lib/mock-data";
 
 const USEFUL_LINKS = ["about", "contactUs", "track", "privacy", "returns", "terms"] as const;
