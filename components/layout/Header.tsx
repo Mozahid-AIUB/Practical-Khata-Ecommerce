@@ -95,6 +95,18 @@ export function Header() {
           </div>
         </div>
 
+        {/* custom-khata service announcement */}
+        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 pb-2.5 text-center text-xs font-medium text-ink-800/70">
+          <PenLine className="h-3.5 w-3.5 shrink-0 text-accent-500" aria-hidden />
+          <span>{tHeader("announce")}</span>
+          <Link
+            href={p("/shop?category=full-set")}
+            className="font-bold text-brand-600 underline decoration-brand-300 underline-offset-2 transition hover:text-brand-700"
+          >
+            {tHeader("announceCta")} →
+          </Link>
+        </div>
+
         {/* mobile nav drawer */}
         {mobileOpen && (
           <nav className="flex flex-col gap-1 border-t border-rule pb-3 md:hidden">

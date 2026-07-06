@@ -16,7 +16,9 @@
     "wishlist": "Wishlist",
     "cart": "Cart",
     "account": "Account",
-    "callUs": "Call or WhatsApp"
+    "callUs": "Call or WhatsApp",
+    "announce": "Custom khata service — send your PDF & index, we handwrite it exactly to board standard",
+    "announceCta": "Place a custom order"
   },
   "sidebar": {
     "menu": "Khata List",
