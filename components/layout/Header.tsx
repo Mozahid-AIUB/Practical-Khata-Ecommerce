@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { Search, Heart, ShoppingCart, User, PenLine, Menu, X, Phone } from "lucide-react";
+import { Search, Heart, ShoppingCart, User, PenLine, Menu, X } from "lucide-react";
+import { WhatsApp } from "./SocialIcons";
 import { LanguageToggle } from "./LanguageToggle";
 
 function MarqueeStrip() {
@@ -77,10 +78,12 @@ export function Header() {
           </nav>
           <div className="flex items-center gap-3">
             <a
-              href="tel:01611987955"
-              className="hidden items-center gap-1.5 rounded-full border border-brand-200 px-3 py-1.5 text-xs font-semibold text-brand-700 transition hover:bg-brand-50 lg:flex"
+              href="https://wa.me/8801611987955"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center gap-2 rounded-full border border-brand-200 px-3.5 py-2 text-sm font-bold text-brand-700 transition hover:bg-brand-50 lg:flex"
             >
-              <Phone className="h-3.5 w-3.5" />
+              <WhatsApp className="h-4.5 w-4.5 text-[#25D366]" />
               01611-987955
             </a>
             <LanguageToggle />

@@ -19,7 +19,7 @@ function renderWith(locale: string) {
 describe("LanguageToggle", () => {
   it("renders both language options", () => {
     renderWith("bn");
-    expect(screen.getByRole("button", { name: /বাংলা/ })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "BN" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /EN/ })).toBeInTheDocument();
   });
 });
