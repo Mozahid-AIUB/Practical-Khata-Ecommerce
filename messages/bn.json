@@ -122,6 +122,8 @@
     "open": "চ্যাট খুলুন",
     "whatsappLabel": "WhatsApp-এ চ্যাট করুন",
     "continueOnWhatsapp": "WhatsApp-এ কথা বলুন",
+    "placeholder": "লিখুন...",
+    "send": "পাঠান",
     "deliveryLabel": "ডেলিভারি",
     "deliveryAnswer": "সারাদেশে ডেলিভারি ২-৩ কর্মদিবস, ঢাকায় ১-২ দিন। অগ্রিম পেমেন্টে অর্ডার কনফার্ম হয়।",
     "priceLabel": "দাম",
@@ -129,6 +131,7 @@
     "paymentLabel": "Payment",
     "paymentAnswer": "bKash, Nagad ও Rocket-এ পেমেন্ট নেওয়া হয় — নম্বর: 01611-987955।",
     "trackingLabel": "Tracking",
-    "trackingAnswer": "অর্ডার ট্র্যাক করতে উপরের মেনু থেকে 'অর্ডার ট্র্যাক' এ যান, অথবা সরাসরি WhatsApp-এ যোগাযোগ করুন।"
+    "trackingAnswer": "অর্ডার ট্র্যাক করতে উপরের মেনু থেকে 'অর্ডার ট্র্যাক' এ যান, অথবা সরাসরি WhatsApp-এ যোগাযোগ করুন।",
+    "fallbackAnswer": "দুঃখিত, ঠিক বুঝতে পারিনি — নিচের বাটনগুলো ব্যবহার করুন, অথবা সরাসরি উত্তরের জন্য WhatsApp-এ যোগাযোগ করুন।"
   }
 }

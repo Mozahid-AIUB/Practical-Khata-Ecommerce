@@ -122,6 +122,8 @@
     "open": "Open chat",
     "whatsappLabel": "Chat on WhatsApp",
     "continueOnWhatsapp": "Continue on WhatsApp",
+    "placeholder": "Type a message...",
+    "send": "Send",
     "deliveryLabel": "Delivery",
     "deliveryAnswer": "Delivery takes 2-3 working days nationwide, 1-2 days in Dhaka. Orders are confirmed after advance payment.",
     "priceLabel": "Price",
@@ -129,6 +131,7 @@
     "paymentLabel": "Payment",
     "paymentAnswer": "We accept bKash, Nagad and Rocket — number: 01611-987955.",
     "trackingLabel": "Tracking",
-    "trackingAnswer": "To track your order, use 'Track Order' in the menu above, or message us directly on WhatsApp."
+    "trackingAnswer": "To track your order, use 'Track Order' in the menu above, or message us directly on WhatsApp.",
+    "fallbackAnswer": "Sorry, I couldn't quite get that — please use one of the buttons below, or continue on WhatsApp for a direct answer."
   }
 }

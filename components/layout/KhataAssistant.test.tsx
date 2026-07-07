@@ -12,6 +12,8 @@ const messages = {
     open: "Open chat",
     whatsappLabel: "Chat on WhatsApp",
     continueOnWhatsapp: "Continue on WhatsApp",
+    placeholder: "Type a message...",
+    send: "Send",
     deliveryLabel: "Delivery",
     deliveryAnswer: "Delivery takes 2-3 working days nationwide, 1-2 days in Dhaka.",
     priceLabel: "Price",
@@ -20,6 +22,7 @@ const messages = {
     paymentAnswer: "We accept bKash, Nagad and Rocket.",
     trackingLabel: "Tracking",
     trackingAnswer: "Use Track Order in the menu, or message us on WhatsApp.",
+    fallbackAnswer: "Sorry, please use a button below or continue on WhatsApp.",
   },
 };
 
@@ -68,5 +71,26 @@ describe("KhataAssistant", () => {
       "href",
       "https://wa.me/8801611987955",
     );
+  });
+
+  it("has a text input that answers typed questions inline via keyword match", () => {
+    renderWith();
+    fireEvent.click(screen.getByRole("button", { name: "Open chat" }));
+    const input = screen.getByPlaceholderText("Type a message...");
+    fireEvent.change(input, { target: { value: "how much does it cost?" } });
+    fireEvent.submit(input.closest("form")!);
+    expect(screen.getByText("Each khata starts from ৳310.")).toBeInTheDocument();
+    expect(input).toHaveValue("");
+  });
+
+  it("falls back to a generic answer when the typed question matches nothing", () => {
+    renderWith();
+    fireEvent.click(screen.getByRole("button", { name: "Open chat" }));
+    const input = screen.getByPlaceholderText("Type a message...");
+    fireEvent.change(input, { target: { value: "xyzzy unrelated gibberish" } });
+    fireEvent.submit(input.closest("form")!);
+    expect(
+      screen.getByText("Sorry, please use a button below or continue on WhatsApp."),
+    ).toBeInTheDocument();
   });
 });

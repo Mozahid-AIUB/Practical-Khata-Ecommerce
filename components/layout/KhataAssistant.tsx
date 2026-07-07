@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { X, Truck, Wallet, CreditCard, PackageSearch, PenLine, MessageCircle } from "lucide-react";
+import { X, Send, Truck, Wallet, CreditCard, PackageSearch, PenLine, MessageCircle } from "lucide-react";
 import { WhatsApp } from "./SocialIcons";
 
 const WHATSAPP_NUMBER = "8801611987955";
@@ -16,10 +16,20 @@ const QUICK_REPLIES = [
 
 type Turn = { from: "bot" | "user"; text: string };
 
+// naive keyword match against the same static answers the quick-reply
+// buttons use — good enough until the real RAG backend lands
+const KEYWORDS: Record<(typeof QUICK_REPLIES)[number]["key"], string[]> = {
+  delivery: ["delivery", "shipping", "ডেলিভারি", "কবে", "কতদিন"],
+  price: ["price", "cost", "taka", "৳", "দাম", "কত"],
+  payment: ["payment", "pay", "bkash", "nagad", "rocket", "পেমেন্ট", "বিকাশ"],
+  tracking: ["track", "order status", "ট্র্যাক", "অর্ডার"],
+};
+
 export function KhataAssistant() {
   const t = useTranslations("assistant");
   const [open, setOpen] = useState(false);
   const [turns, setTurns] = useState<Turn[]>([]);
+  const [draft, setDraft] = useState("");
 
   function ask(key: (typeof QUICK_REPLIES)[number]["key"]) {
     setTurns((prev) => [
@@ -27,6 +37,21 @@ export function KhataAssistant() {
       { from: "user", text: t(`${key}Label`) },
       { from: "bot", text: t(`${key}Answer`) },
     ]);
+  }
+
+  function send(text: string) {
+    const trimmed = text.trim();
+    if (!trimmed) return;
+    const lower = trimmed.toLowerCase();
+    const matchedKey = (Object.keys(KEYWORDS) as (keyof typeof KEYWORDS)[]).find((key) =>
+      KEYWORDS[key].some((word) => lower.includes(word.toLowerCase())),
+    );
+    setTurns((prev) => [
+      ...prev,
+      { from: "user", text: trimmed },
+      { from: "bot", text: matchedKey ? t(`${matchedKey}Answer`) : t("fallbackAnswer") },
+    ]);
+    setDraft("");
   }
 
   return (
@@ -92,6 +117,29 @@ export function KhataAssistant() {
               ))}
             </div>
           </div>
+
+          <form
+            className="flex items-center gap-2 border-t border-rule px-3 py-3"
+            onSubmit={(e) => {
+              e.preventDefault();
+              send(draft);
+            }}
+          >
+            <input
+              type="text"
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              placeholder={t("placeholder")}
+              className="min-w-0 flex-1 rounded-full border border-rule bg-white px-4 py-2 text-sm text-ink-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-300"
+            />
+            <button
+              type="submit"
+              aria-label={t("send")}
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white transition hover:bg-brand-700"
+            >
+              <Send className="h-4 w-4" />
+            </button>
+          </form>
 
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
