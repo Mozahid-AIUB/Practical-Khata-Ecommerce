@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check, FileText } from "lucide-react";
+import { Check } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 const TICKS = ["tick1", "tick2", "tick3", "tick4"] as const;
@@ -25,9 +25,8 @@ export function KhataHero() {
           {t("stamp")}
         </span>
 
-        <h1 className="font-display text-3xl font-bold leading-[1.25] text-ink-900 sm:text-[2.6rem] sm:leading-[1.2]">
-          {t("titleA")}
-          <br />
+        <h1 className="font-display text-2xl font-bold leading-[1.35] text-ink-900 sm:text-[2rem] sm:leading-[1.3]">
+          {t("titleA")}{" "}
           <span className="text-brand-600">{t("titleB")}</span>
         </h1>
 
@@ -56,11 +55,6 @@ export function KhataHero() {
         </div>
 
         <p className="text-sm text-ink-800/60">{t("from")}</p>
-
-        <div className="flex items-start gap-2.5 rounded-lg border border-brand-100 bg-brand-50/70 px-4 py-3">
-          <FileText className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" strokeWidth={2} />
-          <p className="text-sm font-medium leading-6 text-brand-900">{t("customNote")}</p>
-        </div>
       </div>
     </section>
   );
