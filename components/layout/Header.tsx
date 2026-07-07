@@ -6,20 +6,15 @@ import { useLocale, useTranslations } from "next-intl";
 import { Search, Heart, ShoppingCart, User, PenLine, Menu, X, Phone } from "lucide-react";
 import { LanguageToggle } from "./LanguageToggle";
 
-const MARQUEE_ITEMS = ["i1", "i2", "i3", "i4", "i5", "i6", "i7"] as const;
-
 function MarqueeStrip() {
   const t = useTranslations("marquee");
   const items = (copy: number) => (
     <div className="flex shrink-0 items-center" aria-hidden={copy > 0 || undefined}>
-      {MARQUEE_ITEMS.map((key) => (
-        <span key={key} className="flex items-center whitespace-nowrap">
-          <span className="mx-5 text-accent-400" aria-hidden>
-            ✦
-          </span>
-          {t(key)}
-        </span>
-      ))}
+      <span className="flex items-center whitespace-nowrap">{t("customBn")}</span>
+      <span className="mx-5 text-accent-400" aria-hidden>
+        ✦
+      </span>
+      <span className="flex items-center whitespace-nowrap">{t("customEn")}</span>
     </div>
   );
 

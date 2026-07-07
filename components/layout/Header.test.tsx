@@ -18,13 +18,8 @@ const messages = {
     callUs: "Call or WhatsApp",
   },
   marquee: {
-    i1: "SSC & HSC practical khata",
-    i2: "Physics · Chemistry · Biology · Higher Math · ICT · Agriculture",
-    i3: "Professional handwriting",
-    i4: "Perfect figures & diagrams",
-    i5: "Fast delivery nationwide",
-    i6: "Top quality at the lowest price",
-    i7: "Custom khata — send a PDF & index, we write it exactly",
+    customBn: "আমরা সবসময় কাস্টম খাতা তৈরি করি, রেডিমেড না — ইনডেক্স ও PDF পাঠান, আমরা হুবহু লিখে দেব",
+    customEn: "We always make custom khata, never off-the-shelf — send your index & PDF, we write it exactly",
   },
 };
 
@@ -42,13 +37,13 @@ describe("Header", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders the running marquee items", () => {
+  it("renders the custom-khata marquee message", () => {
     render(
       <NextIntlClientProvider locale="en" messages={messages}>
         <Header />
       </NextIntlClientProvider>,
     );
-    expect(screen.getAllByText("Professional handwriting").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText(/We always make custom khata/).length).toBeGreaterThanOrEqual(1);
   });
 
   it("shows the WhatsApp phone number", () => {
