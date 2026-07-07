@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { TrustBar } from "@/components/layout/TrustBar";
 import { Footer } from "@/components/layout/Footer";
+import { KhataAssistant } from "@/components/layout/KhataAssistant";
 
 // display: Baloo Da 2 — sturdy, friendly Bengali display with a matching Latin
 const balooDa2 = Baloo_Da_2({
@@ -48,6 +49,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <div className="flex-1">{children}</div>
           <TrustBar />
           <Footer />
+          <KhataAssistant />
         </NextIntlClientProvider>
       </body>
     </html>

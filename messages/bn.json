@@ -113,5 +113,22 @@
     "returns": "রিটার্ন ও সংশোধন",
     "terms": "শর্তাবলী",
     "track": "অর্ডার ট্র্যাক"
+  },
+  "assistant": {
+    "title": "Khata Assistant",
+    "online": "অনলাইন",
+    "greeting": "আসসালামু আলাইকুম! 👋 কীভাবে সাহায্য করতে পারি?",
+    "close": "বন্ধ করুন",
+    "open": "চ্যাট খুলুন",
+    "whatsappLabel": "WhatsApp-এ চ্যাট করুন",
+    "continueOnWhatsapp": "WhatsApp-এ কথা বলুন",
+    "deliveryLabel": "ডেলিভারি",
+    "deliveryAnswer": "সারাদেশে ডেলিভারি ২-৩ কর্মদিবস, ঢাকায় ১-২ দিন। অগ্রিম পেমেন্টে অর্ডার কনফার্ম হয়।",
+    "priceLabel": "দাম",
+    "priceAnswer": "প্রতি খাতা ৳৩১০ থেকে শুরু, বায়োলজি ৳৩৮৫-৳৪৬৫। PCMB + ICT ফুল প্যাকেজ মাত্র ৳৩,০৬০।",
+    "paymentLabel": "Payment",
+    "paymentAnswer": "bKash, Nagad ও Rocket-এ পেমেন্ট নেওয়া হয় — নম্বর: 01611-987955।",
+    "trackingLabel": "Tracking",
+    "trackingAnswer": "অর্ডার ট্র্যাক করতে উপরের মেনু থেকে 'অর্ডার ট্র্যাক' এ যান, অথবা সরাসরি WhatsApp-এ যোগাযোগ করুন।"
   }
 }

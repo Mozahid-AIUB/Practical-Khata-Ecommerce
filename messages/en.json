@@ -113,5 +113,22 @@
     "returns": "Returns & Corrections",
     "terms": "Terms & Conditions",
     "track": "Track Order"
+  },
+  "assistant": {
+    "title": "Khata Assistant",
+    "online": "Online",
+    "greeting": "Assalamu Alaikum! 👋 How can I help you?",
+    "close": "Close",
+    "open": "Open chat",
+    "whatsappLabel": "Chat on WhatsApp",
+    "continueOnWhatsapp": "Continue on WhatsApp",
+    "deliveryLabel": "Delivery",
+    "deliveryAnswer": "Delivery takes 2-3 working days nationwide, 1-2 days in Dhaka. Orders are confirmed after advance payment.",
+    "priceLabel": "Price",
+    "priceAnswer": "Each khata starts from ৳310, Biology is ৳385-৳465. The PCMB + ICT full package is just ৳3,060.",
+    "paymentLabel": "Payment",
+    "paymentAnswer": "We accept bKash, Nagad and Rocket — number: 01611-987955.",
+    "trackingLabel": "Tracking",
+    "trackingAnswer": "To track your order, use 'Track Order' in the menu above, or message us directly on WhatsApp."
   }
 }
