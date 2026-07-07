@@ -16,7 +16,7 @@ const messages = {
     cta: "Order your khata",
     ctaSecondary: "See the full set",
     marks: "10/10",
-    customNote: "We always make custom khata, never off-the-shelf — send us your index and PDF, and we handwrite it exactly to match.",
+    customNote: "No ready-made khata here — just send us your index and PDF, and we'll handwrite it exactly like yours.",
   },
 };
 
@@ -49,6 +49,6 @@ describe("KhataHero", () => {
         <KhataHero />
       </NextIntlClientProvider>,
     );
-    expect(screen.getByText(/We always make custom khata/)).toBeInTheDocument();
+    expect(screen.getByText(/No ready-made khata here/)).toBeInTheDocument();
   });
 });

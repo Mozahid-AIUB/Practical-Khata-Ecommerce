@@ -46,4 +46,13 @@ describe("Footer", () => {
     expect(screen.getByText("HSC Practical Khata")).toBeInTheDocument();
     expect(screen.getAllByText("Physics 1st Paper").length).toBeGreaterThanOrEqual(1);
   });
+
+  it("does not render a Full Package & Assignments column", () => {
+    render(
+      <NextIntlClientProvider locale="en" messages={messages}>
+        <Footer />
+      </NextIntlClientProvider>,
+    );
+    expect(screen.queryByText("Full Package & Assignments")).not.toBeInTheDocument();
+  });
 });

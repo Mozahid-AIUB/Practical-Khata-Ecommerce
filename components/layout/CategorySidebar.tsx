@@ -41,6 +41,7 @@ export function CategorySidebar() {
         <p className="font-semibold text-ink-900">{t("step1")}</p>
         <p className="font-semibold text-ink-900">{t("step2")}</p>
         <p className="font-semibold text-ink-900">{t("step3")}</p>
+        <p className="font-semibold text-accent-500">{t("customNote")}</p>
       </div>
     </aside>
   );

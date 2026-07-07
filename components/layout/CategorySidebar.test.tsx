@@ -9,6 +9,7 @@ const messages = {
     step1: "1. Pick your khata",
     step2: "2. Pay via bKash/Nagad",
     step3: "3. Home delivery in 2-3 days",
+    customNote: "We make custom khata, not ready-made",
   },
 };
 
@@ -36,5 +37,10 @@ describe("CategorySidebar", () => {
   it("renders the how-to-order steps", () => {
     renderWith("en");
     expect(screen.getByText("2. Pay via bKash/Nagad")).toBeInTheDocument();
+  });
+
+  it("states khata is custom-made, not ready-made", () => {
+    renderWith("en");
+    expect(screen.getByText("We make custom khata, not ready-made")).toBeInTheDocument();
   });
 });

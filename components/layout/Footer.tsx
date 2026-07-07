@@ -33,8 +33,8 @@ export function Footer() {
           <p className="mt-4 max-w-sm text-sm">{t("delivery")}</p>
         </div>
 
-        {/* one column per khata category */}
-        {getCategories().map((category) => (
+        {/* one column per khata category (excludes the full-package/assignment bucket) */}
+        {getCategories().filter((c) => c.slug !== "full-set").map((category) => (
           <div key={category.id}>
             <h4 className="font-semibold text-white">{category.name[locale] ?? category.name.en}</h4>
             <ul className="mt-3 space-y-2 text-sm">

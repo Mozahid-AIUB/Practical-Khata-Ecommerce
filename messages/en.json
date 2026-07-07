@@ -19,14 +19,15 @@
     "callUs": "Call or WhatsApp"
   },
   "marquee": {
-    "customBn": "আমরা সবসময় কাস্টম খাতা তৈরি করি, রেডিমেড না — ইনডেক্স ও PDF পাঠান, আমাদের এক্সপার্ট আর্টিস্ট দিয়ে হুবহু লিখে দেব",
-    "customEn": "We always make custom khata, never off-the-shelf — send your index & PDF, we write it exactly"
+    "customBn": "রেডিমেড নয়, প্রতিটি খাতা তৈরি হয় আপনার চাহিদা অনুযায়ী — ইনডেক্স ও PDF পাঠালেই আমাদের এক্সপার্ট আর্টিস্টরা হুবহু কপি করে দেবেন",
+    "customEn": "Never off-the-shelf, every khata is made to your requirements — send your index & PDF and our expert artists will copy it exactly"
   },
   "sidebar": {
     "menu": "Khata List",
     "step1": "1. Pick your khata",
     "step2": "2. Pay via bKash/Nagad",
-    "step3": "3. Home delivery in 2-3 days"
+    "step3": "3. Home delivery in 2-3 days",
+    "customNote": "We make custom khata, not ready-made"
   },
   "hero": {
     "stamp": "SSC · HSC",
@@ -40,7 +41,7 @@
     "cta": "Order your khata",
     "ctaSecondary": "See the full package",
     "marks": "25/25",
-    "customNote": "We always make custom khata, never off-the-shelf — send us your index and PDF, and we handwrite it exactly to match."
+    "customNote": "No ready-made khata here — just send us your index and PDF, and we'll handwrite it exactly like yours."
   },
   "bundle": {
     "eyebrow": "Special Launch Offer",
@@ -74,7 +75,10 @@
     "r2": "SSC 2025, Chattogram",
     "q3": "I took the PCMB + ICT full set. Perfect in every subject.",
     "n3": "Mehedi Hasan",
-    "r3": "HSC 2025, Sylhet"
+    "r3": "HSC 2025, Sylhet",
+    "q4": "Excellent service. My khata came out clean and neat, done right on time. Recommending without hesitation. Thank you! ❤️",
+    "n4": "Shaad",
+    "r4": "HSC batch 2027"
   },
   "trust": {
     "deliveryTitle": "Fast Delivery",

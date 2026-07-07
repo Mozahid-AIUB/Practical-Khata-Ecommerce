@@ -18,8 +18,8 @@ const messages = {
     callUs: "Call or WhatsApp",
   },
   marquee: {
-    customBn: "আমরা সবসময় কাস্টম খাতা তৈরি করি, রেডিমেড না — ইনডেক্স ও PDF পাঠান, আমাদের এক্সপার্ট আর্টিস্ট দিয়ে হুবহু লিখে দেব",
-    customEn: "We always make custom khata, never off-the-shelf — send your index & PDF, we write it exactly",
+    customBn: "রেডিমেড নয়, প্রতিটি খাতা তৈরি হয় আপনার চাহিদা অনুযায়ী — ইনডেক্স ও PDF পাঠালেই আমাদের এক্সপার্ট আর্টিস্টরা হুবহু কপি করে দেবেন",
+    customEn: "Never off-the-shelf, every khata is made to your requirements — send your index & PDF and our expert artists will copy it exactly",
   },
 };
 
@@ -43,7 +43,7 @@ describe("Header", () => {
         <Header />
       </NextIntlClientProvider>,
     );
-    expect(screen.getAllByText(/We always make custom khata/).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText(/Never off-the-shelf/).length).toBeGreaterThanOrEqual(1);
   });
 
   it("shows the WhatsApp phone number", () => {

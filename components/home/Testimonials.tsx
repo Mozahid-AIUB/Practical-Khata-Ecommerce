@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-const QUOTES = [1, 2, 3] as const;
+const QUOTES = [1, 2, 3, 4] as const;
 
 export function Testimonials() {
   const t = useTranslations("testimonials");
@@ -25,7 +25,7 @@ export function Testimonials() {
         <p className="text-sm font-medium text-ink-800/60">{t("sub")}</p>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         {QUOTES.map((i) => (
           <figure
             key={i}
