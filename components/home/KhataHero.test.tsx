@@ -6,8 +6,8 @@ import { KhataHero } from "./KhataHero";
 const messages = {
   hero: {
     stamp: "SSC · HSC",
-    titleA: "We always make custom khata,",
-    titleB: "never off-the-shelf — send your index & PDF, we handwrite it exactly",
+    titleA: "Handwritten practical khata,",
+    titleB: "ready to submit",
     tick1: "Professional handwriting",
     tick2: "Perfect figures & diagrams",
     tick3: "Nationwide delivery in 2-3 days",
@@ -16,18 +16,18 @@ const messages = {
     cta: "Order your khata",
     ctaSecondary: "See the full set",
     marks: "10/10",
+    customNote: "We always make custom khata, never off-the-shelf — send us your index and PDF, and we handwrite it exactly to match.",
   },
 };
 
 describe("KhataHero", () => {
-  it("renders the custom-khata headline and CTA", () => {
+  it("renders the headline and CTA", () => {
     render(
       <NextIntlClientProvider locale="en" messages={messages}>
         <KhataHero />
       </NextIntlClientProvider>,
     );
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("We always make custom khata");
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("never off-the-shelf");
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Handwritten practical khata");
     expect(screen.getByRole("link", { name: "Order your khata" })).toBeInTheDocument();
   });
 
@@ -41,5 +41,14 @@ describe("KhataHero", () => {
     expect(screen.getByText("Perfect figures & diagrams")).toBeInTheDocument();
     expect(screen.getByText("Nationwide delivery in 2-3 days")).toBeInTheDocument();
     expect(screen.getByText("100% neat & error-free")).toBeInTheDocument();
+  });
+
+  it("renders the custom-khata note", () => {
+    render(
+      <NextIntlClientProvider locale="en" messages={messages}>
+        <KhataHero />
+      </NextIntlClientProvider>,
+    );
+    expect(screen.getByText(/We always make custom khata/)).toBeInTheDocument();
   });
 });
