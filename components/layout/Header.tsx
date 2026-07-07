@@ -9,12 +9,12 @@ import { LanguageToggle } from "./LanguageToggle";
 function MarqueeStrip() {
   const t = useTranslations("marquee");
   const items = (copy: number) => (
-    <div className="flex shrink-0 items-center" aria-hidden={copy > 0 || undefined}>
-      <span className="flex items-center whitespace-nowrap">{t("customBn")}</span>
+    <div className="flex shrink-0 items-center pr-16" aria-hidden={copy > 0 || undefined}>
+      <span className="whitespace-nowrap">{t("customBn")}</span>
       <span className="mx-5 text-accent-400" aria-hidden>
         ✦
       </span>
-      <span className="flex items-center whitespace-nowrap">{t("customEn")}</span>
+      <span className="whitespace-nowrap">{t("customEn")}</span>
     </div>
   );
 
