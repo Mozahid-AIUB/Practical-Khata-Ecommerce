@@ -16,6 +16,7 @@ const messages = {
     cta: "Order your khata",
     ctaSecondary: "See the full set",
     marks: "10/10",
+    customNote: "We always make custom khata, never off-the-shelf — send us your index and PDF, and we handwrite it exactly to match.",
   },
 };
 
@@ -40,5 +41,14 @@ describe("KhataHero", () => {
     expect(screen.getByText("Perfect figures & diagrams")).toBeInTheDocument();
     expect(screen.getByText("Nationwide delivery in 2-3 days")).toBeInTheDocument();
     expect(screen.getByText("100% neat & error-free")).toBeInTheDocument();
+  });
+
+  it("renders the custom-khata note", () => {
+    render(
+      <NextIntlClientProvider locale="en" messages={messages}>
+        <KhataHero />
+      </NextIntlClientProvider>,
+    );
+    expect(screen.getByText(/We always make custom khata/)).toBeInTheDocument();
   });
 });

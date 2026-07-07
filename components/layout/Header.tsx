@@ -24,7 +24,7 @@ function MarqueeStrip() {
   );
 
   return (
-    <div className="overflow-hidden bg-ink-950 py-2 text-xs font-semibold text-white/90">
+    <div className="overflow-hidden bg-brand-900 py-2 text-xs font-semibold text-white/95">
       <div className="marquee-track flex w-max">
         {items(0)}
         {items(1)}
