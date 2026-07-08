@@ -13,7 +13,7 @@ services:
       - DB_HOST=mysql
       - DB_DATABASE=practical_khata
       - DB_USERNAME=root
-      - DB_PASSWORD=secret
+      - DB_PASSWORD=${MYSQL_ROOT_PASSWORD:-secret}
       - REDIS_HOST=redis
     depends_on:
       mysql:
@@ -27,13 +27,13 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: practical_khata
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-secret}
     ports:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-psecret"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD"]
       interval: 5s
       timeout: 5s
       retries: 10

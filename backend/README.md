@@ -11,8 +11,13 @@ phase 3 (checkout, orders, payments, order tracking).
 Requires only [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 This runs PHP 8.3, MySQL 8, and Redis for you — nothing else to install.
 
+By default MySQL's root password is `secret` (local-only, never exposed outside
+your machine — fine for local dev). To use your own, export
+`MYSQL_ROOT_PASSWORD` before running `docker compose up`:
+
 ```bash
 cd backend
+export MYSQL_ROOT_PASSWORD=$(openssl rand -hex 16)   # optional, skip to use the default
 docker compose up -d --build
 
 # first run only:
