@@ -13,12 +13,34 @@
 
 ---
 
-## ধাপ ১: Render-এ PostgreSQL বানান
+## এখন পর্যন্ত যা হয়ে গেছে ✅
 
-1. [render.com](https://render.com) এ GitHub দিয়ে সাইন আপ করুন
-2. **New → PostgreSQL**
-3. নাম দিন (যেমন `practical-khata-db`), Region সিলেক্ট করুন, **Instance Type: Free**
-4. তৈরি হলে **Connect** ট্যাব থেকে *Internal Database URL* কপি করে রাখুন (একই Render অ্যাকাউন্টের সার্ভিস থেকে কানেক্ট করলে এটাই ব্যবহার হবে, দ্রুত ও ফ্রি ব্যান্ডউইথ)
+- [x] Backend Postgres-compatible করা হয়েছে (`pdo_pgsql` extension + `config/database.php`-এ `pgsql` connection যোগ)
+- [x] `docker-compose.yml`-এ hardcoded password সরিয়ে env var দিয়ে override-যোগ্য করা হয়েছে (security fix)
+- [x] সব কোড GitHub-এ commit + push করা হয়েছে (`main` branch আপ-টু-ডেট)
+- [x] Render-এ PostgreSQL ডাটাবেস তৈরি করা হয়েছে (`practical-khata-db`) — connection string পাওয়া গেছে, **পাসওয়ার্ড reset করার কথা বলা হয়েছিল যেহেতু chat-এ শেয়ার হয়েছিল, সেটা করা হয়েছে কিনা নিশ্চিত করে নিন**
+
+## এখন যা বাকি (নিচের ধাপ ২-৬ অনুসরণ করুন)
+
+- [ ] Render-এ Redis (Key Value) তৈরি করা
+- [ ] Render-এ Laravel Web Service তৈরি করা ও env var বসানো
+- [ ] `APP_KEY` জেনারেট করে বসানো
+- [ ] Migrate + seed চালানো
+- [ ] Admin user তৈরি করা
+- [ ] Vercel-এ frontend deploy করা
+- [ ] শেষ Checklist অনুযায়ী সব টেস্ট করা
+
+---
+
+## ধাপ ১: Render-এ PostgreSQL বানান ✅ (হয়ে গেছে)
+
+`practical-khata-db` নামে Render-এ PostgreSQL তৈরি হয়ে গেছে। **Connect** ট্যাব থেকে
+*Internal Database URL* সংগ্রহ করে রাখুন (backend Web Service বানানোর সময় লাগবে) —
+একই Render অ্যাকাউন্টের সার্ভিস থেকে কানেক্ট করলে Internal URL ব্যবহার করাই ভালো
+(দ্রুত, ফ্রি ব্যান্ডউইথ)।
+
+*(পরে আবার করতে হলে: [render.com](https://render.com) → **New → PostgreSQL** →
+নাম দিন → Region সিলেক্ট → **Instance Type: Free**)*
 
 ---
 
@@ -62,14 +84,19 @@
 
 ---
 
-## ধাপ ৪: APP_KEY জেনারেট করুন
+## ধাপ ৪: APP_KEY জেনারেট করুন ✅ (হয়ে গেছে)
 
-লোকাল মেশিনে (Docker চালু থাকা অবস্থায়):
+জেনারেট করা key (Render-এর `APP_KEY` ভ্যারিয়েবলে হুবহু এটা বসাবেন):
+```
+base64:CNaHV5+KLCdgY5BhtUw/1v7P6uKPIr5vsTRtTO7bkAg=
+```
+
+*(নতুন করে জেনারেট করতে হলে, `backend` ফোল্ডারে গিয়ে — লোকাল প্রজেক্ট পাথ থেকে,
+`C:\Users\...` থেকে না —)*
 ```bash
-cd backend
+cd "d:\Way_To_Job\practical-khata-ecommerce\backend"
 docker compose exec app php artisan key:generate --show
 ```
-যে key আসবে সেটা Render-এর `APP_KEY` ভ্যারিয়েবলে বসিয়ে আবার Deploy করুন।
 
 ---
 
