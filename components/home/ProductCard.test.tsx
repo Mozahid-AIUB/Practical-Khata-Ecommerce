@@ -1,8 +1,16 @@
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { NextIntlClientProvider } from "next-intl";
 import { ProductCard } from "./ProductCard";
+import { CartProvider } from "@/components/cart/CartContext";
 import type { Product } from "@/lib/mock-data";
+
+vi.mock("@/lib/api", () => ({
+  getCart: vi.fn().mockResolvedValue({ id: 0, items: [], totalPrice: 0 }),
+  addCartItem: vi.fn(),
+  updateCartItem: vi.fn(),
+  removeCartItem: vi.fn(),
+}));
 
 const messages = {
   product: { addToCart: "Add to cart", outOfStock: "Out of stock", soldOut: "Sold out", ssc: "SSC", hsc: "HSC" },
@@ -24,7 +32,9 @@ const product: Product = {
 function renderWith(locale: string, p: Product) {
   return render(
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <ProductCard product={p} />
+      <CartProvider>
+        <ProductCard product={p} />
+      </CartProvider>
     </NextIntlClientProvider>,
   );
 }

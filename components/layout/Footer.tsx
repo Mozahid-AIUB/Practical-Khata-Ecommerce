@@ -6,11 +6,15 @@ import { Facebook, Instagram } from "./SocialIcons";
 import { Bkash, Nagad, Rocket, SHIPPING_PARTNERS } from "./PaymentIcons";
 
 const PAYMENT_METHODS = [Bkash, Nagad, Rocket] as const;
-import { getCategories, getProductsByCategory, type Localized } from "@/lib/mock-data";
+import type { Category, Localized, Product } from "@/lib/mock-data";
 
 const USEFUL_LINKS = ["about", "contactUs", "track", "privacy", "returns", "terms"] as const;
 
-export function Footer() {
+export function Footer({
+  categories,
+}: {
+  categories: (Category & { products: Product[] })[];
+}) {
   const locale = useLocale() as keyof Localized;
   const t = useTranslations("footer");
   const year = new Date().getFullYear();
@@ -34,11 +38,11 @@ export function Footer() {
         </div>
 
         {/* one column per khata category (excludes the full-package/assignment bucket) */}
-        {getCategories().filter((c) => c.slug !== "full-set").map((category) => (
+        {categories.filter((c) => c.slug !== "full-set").map((category) => (
           <div key={category.id}>
             <h4 className="font-semibold text-white">{category.name[locale] ?? category.name.en}</h4>
             <ul className="mt-3 space-y-2 text-sm">
-              {getProductsByCategory(category.slug).slice(0, 6).map((p) => (
+              {category.products.slice(0, 6).map((p) => (
                 <li key={p.id}>
                   <Link href={`/${locale}/shop?category=${category.slug}`} className="transition hover:text-white">
                     {p.name[locale] ?? p.name.en}

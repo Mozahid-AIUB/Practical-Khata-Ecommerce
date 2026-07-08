@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { Search, Heart, ShoppingCart, User, PenLine, Menu, X } from "lucide-react";
 import { WhatsApp } from "./SocialIcons";
 import { LanguageToggle } from "./LanguageToggle";
+import { useCart } from "@/components/cart/CartContext";
 
 function MarqueeStrip() {
   const t = useTranslations("marquee");
@@ -31,18 +33,24 @@ function MarqueeStrip() {
 
 export function Header() {
   const locale = useLocale();
+  const pathname = usePathname();
   const tNav = useTranslations("nav");
   const tHeader = useTranslations("header");
   const p = (path: string) => `/${locale}${path}`;
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { itemCount } = useCart();
 
   const navItems = [
     { key: "home", href: "" },
     { key: "shop", href: "/shop" },
-    { key: "about", href: "/about" },
     { key: "contact", href: "/contact" },
     { key: "track", href: "/track" },
   ] as const;
+
+  function isActive(href: string) {
+    const target = p(href);
+    return href === "" ? pathname === target : pathname.startsWith(target);
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-[#fdfcf9]/95 text-ink-900 shadow-sm backdrop-blur">
@@ -70,11 +78,24 @@ export function Header() {
             </Link>
           </div>
           <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">
-            {navItems.map((item) => (
-              <Link key={item.key} href={p(item.href)} className="text-ink-800/70 transition hover:text-brand-600">
-                {tNav(item.key)}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.key}
+                  href={p(item.href)}
+                  aria-current={active ? "page" : undefined}
+                  className={`relative rounded py-1 outline-none transition focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 ${
+                    active ? "text-brand-600" : "text-ink-800/70 hover:text-brand-600"
+                  }`}
+                >
+                  {tNav(item.key)}
+                  {active && (
+                    <span className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-brand-600" aria-hidden />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
           <div className="flex items-center gap-3">
             <a
@@ -113,7 +134,7 @@ export function Header() {
             </button>
             <button type="button" aria-label={tHeader("cart")} className="relative text-ink-800/80 hover:text-brand-600">
               <ShoppingCart className="h-6 w-6" />
-              <span className="absolute -right-2 -top-2 rounded-full bg-accent-500 px-1.5 text-xs text-white">0</span>
+              <span className="absolute -right-2 -top-2 rounded-full bg-accent-500 px-1.5 text-xs text-white">{itemCount}</span>
             </button>
             <button type="button" aria-label={tHeader("account")} className="text-ink-800/80 hover:text-brand-600">
               <User className="h-6 w-6" />
@@ -124,16 +145,24 @@ export function Header() {
         {/* mobile nav drawer */}
         {mobileOpen && (
           <nav className="flex flex-col gap-1 border-t border-rule pb-3 md:hidden">
-            {navItems.map((item) => (
-              <Link
-                key={item.key}
-                href={p(item.href)}
-                onClick={() => setMobileOpen(false)}
-                className="rounded px-2 py-2.5 text-sm font-semibold text-ink-800/80 transition hover:bg-brand-50 hover:text-brand-700"
-              >
-                {tNav(item.key)}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.key}
+                  href={p(item.href)}
+                  onClick={() => setMobileOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={`rounded px-2 py-2.5 text-sm font-semibold transition ${
+                    active
+                      ? "bg-brand-50 text-brand-700"
+                      : "text-ink-800/80 hover:bg-brand-50 hover:text-brand-700"
+                  }`}
+                >
+                  {tNav(item.key)}
+                </Link>
+              );
+            })}
           </nav>
         )}
       </div>

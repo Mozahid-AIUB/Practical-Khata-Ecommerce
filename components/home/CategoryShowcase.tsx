@@ -4,17 +4,25 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
-import { getProductsByCategory, type Category, type Localized } from "@/lib/mock-data";
+import type { Category, Localized, Product } from "@/lib/mock-data";
 import { ProductCard } from "./ProductCard";
 
 const INITIAL_COUNT = 8;
 const TABS = ["tabAll", "tabFirst", "tabSecond"] as const;
 type Tab = (typeof TABS)[number];
 
-export function CategoryShowcase({ category }: { category: Category }) {
+export function CategoryShowcase({
+  category,
+  products,
+  compact = false,
+}: {
+  category: Category;
+  products: Product[];
+  /** tighter spacing + no self-centering, for use inside an already-constrained layout (e.g. the shop page) */
+  compact?: boolean;
+}) {
   const locale = useLocale() as keyof Localized;
   const t = useTranslations("sections");
-  const products = getProductsByCategory(category.slug);
   const [activeTab, setActiveTab] = useState<Tab>("tabAll");
   const [expanded, setExpanded] = useState(false);
 
@@ -31,15 +39,22 @@ export function CategoryShowcase({ category }: { category: Category }) {
   const visible = expanded ? filtered : filtered.slice(0, INITIAL_COUNT);
   const hasMore = filtered.length > INITIAL_COUNT;
 
+  const Wrapper = compact ? "section" : motion.section;
+  const motionProps = compact
+    ? {}
+    : {
+        initial: { opacity: 0, y: 24 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, margin: "-80px" },
+        transition: { duration: 0.5 },
+      };
+
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.5 }}
-      className="mx-auto max-w-7xl px-4 py-10"
+    <Wrapper
+      {...motionProps}
+      className={compact ? "py-4" : "mx-auto max-w-7xl px-4 py-10"}
     >
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-rule pb-3">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-rule pb-3">
         <div className="flex flex-wrap items-center gap-4">
           <h2 className="flex items-center gap-3 font-display text-2xl font-bold text-ink-900">
             <span className="h-7 w-1.5 rounded-full bg-accent-500" aria-hidden />
@@ -89,6 +104,6 @@ export function CategoryShowcase({ category }: { category: Category }) {
           </button>
         </div>
       )}
-    </motion.section>
+    </Wrapper>
   );
 }

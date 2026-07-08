@@ -1,11 +1,8 @@
-import { setRequestLocale, getTranslations } from "next-intl/server";
-import { ComingSoon } from "@/components/layout/ComingSoon";
+import { redirect } from "next/navigation";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export default async function AboutPage({ params }: Props) {
   const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations("nav");
-  return <ComingSoon heading={t("about")} />;
+  redirect(`/${locale}/contact`);
 }

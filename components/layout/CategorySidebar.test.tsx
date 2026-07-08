@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { NextIntlClientProvider } from "next-intl";
 import { CategorySidebar } from "./CategorySidebar";
+import type { Category } from "@/lib/mock-data";
 
 const messages = {
   sidebar: {
@@ -13,10 +14,17 @@ const messages = {
   },
 };
 
+const categories: Category[] = [
+  { id: "c1", name: { en: "SSC Practical Khata", bn: "SSC প্র্যাকটিক্যাল খাতা" }, slug: "ssc-khata" },
+  { id: "c2", name: { en: "HSC Practical Khata", bn: "HSC প্র্যাকটিক্যাল খাতা" }, slug: "hsc-khata" },
+  { id: "c3", name: { en: "Full Package & Assignments", bn: "ফুল প্যাকেজ ও অ্যাসাইনমেন্ট" }, slug: "full-set" },
+];
+const productCounts = [6, 10, 3];
+
 function renderWith(locale: string) {
   return render(
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <CategorySidebar />
+      <CategorySidebar categories={categories} productCounts={productCounts} />
     </NextIntlClientProvider>,
   );
 }

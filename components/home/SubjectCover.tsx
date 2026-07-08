@@ -66,12 +66,12 @@ export function SubjectCover({ product }: { product: Product }) {
             className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/[0.06]"
           />
 
-          <Icon
+          <span
             aria-hidden
-            className="h-14 w-14 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
-            strokeWidth={1.5}
-            style={{ color: fg }}
-          />
+            className="flex h-20 w-20 items-center justify-center rounded-full bg-white/60 shadow-inner transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
+          >
+            <Icon className="h-11 w-11" strokeWidth={1.5} style={{ color: fg }} />
+          </span>
         </>
       )}
 

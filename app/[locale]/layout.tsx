@@ -7,6 +7,8 @@ import { Header } from "@/components/layout/Header";
 import { TrustBar } from "@/components/layout/TrustBar";
 import { Footer } from "@/components/layout/Footer";
 import { KhataAssistant } from "@/components/layout/KhataAssistant";
+import { CartProvider } from "@/components/cart/CartContext";
+import { getCategories, getProductsByCategory } from "@/lib/api";
 
 // display: Baloo Da 2 — sturdy, friendly Bengali display with a matching Latin
 const balooDa2 = Baloo_Da_2({
@@ -37,6 +39,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
   setRequestLocale(locale);
   const messages = await getMessages();
+  const categories = await getCategories();
+  const categoriesWithProducts = await Promise.all(
+    categories.map(async (category) => ({
+      ...category,
+      products: await getProductsByCategory(category.slug),
+    }))
+  );
 
   return (
     <html
@@ -45,11 +54,13 @@ export default async function LocaleLayout({ children, params }: Props) {
     >
       <body className="min-h-full flex flex-col font-sans">
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <div className="flex-1">{children}</div>
-          <TrustBar />
-          <Footer />
-          <KhataAssistant />
+          <CartProvider>
+            <Header />
+            <div className="flex-1">{children}</div>
+            <TrustBar />
+            <Footer categories={categoriesWithProducts} />
+            <KhataAssistant />
+          </CartProvider>
         </NextIntlClientProvider>
       </body>
     </html>

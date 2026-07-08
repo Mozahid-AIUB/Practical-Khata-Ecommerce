@@ -1,9 +1,8 @@
 {
   "nav": {
     "home": "Home",
-    "shop": "Khata",
-    "about": "About Us",
-    "contact": "Contact",
+    "shop": "Shop",
+    "contact": "About & Contact",
     "track": "Track Order"
   },
   "comingSoon": {
@@ -64,6 +63,39 @@
     "tabFirst": "1st Paper",
     "tabSecond": "2nd Paper"
   },
+  "shop": {
+    "heading": "All Khata",
+    "productsFound": "{count} products found"
+  },
+  "about": {
+    "eyebrow": "About & Contact",
+    "heading": "Your khata, our handwriting.",
+    "intro": "We're a dedicated team of handwriting artists helping students across Bangladesh submit practical khata they can be proud of — no printers, no shortcuts, just careful, board-standard handwriting.",
+    "promiseHeading": "What we promise",
+    "promise1Title": "Handwritten, not printed",
+    "promise1Text": "Every page is written by hand to match your board's format — never copy-pasted or printed.",
+    "promise2Title": "Free correction",
+    "promise2Text": "If something isn't right, we fix it — no extra charge, no argument.",
+    "promise3Title": "Talk to a real person",
+    "promise3Text": "No call centers. Message us directly on WhatsApp and a real team member replies.",
+    "promise4Title": "On-time delivery",
+    "promise4Text": "2-3 days nationwide, 1-2 days in Dhaka — we know your submission date matters.",
+    "contactHeading": "Get in touch",
+    "contactText": "Questions about your order, a subject we don't list yet, or anything else — reach out any way that's easiest for you.",
+    "callLabel": "Call us",
+    "whatsappLabel": "Message us on WhatsApp",
+    "hoursLabel": "Hours",
+    "hoursText": "Everyday, 9:00 AM – 10:00 PM",
+    "formHeading": "Send us a message",
+    "formName": "Your name",
+    "formPhone": "Phone number",
+    "formMessage": "Your message",
+    "formSubmit": "Send message",
+    "formSending": "Sending...",
+    "formSuccessTitle": "Message received!",
+    "formSuccessText": "Thanks for reaching out — we'll reply on WhatsApp or by phone shortly.",
+    "formSuccessAnother": "Send another message"
+  },
   "testimonials": {
     "heading": "What students say",
     "sub": "Trusted by 1,200+ students · Rated 4.9/5",
@@ -92,6 +124,7 @@
   },
   "product": {
     "addToCart": "Add to cart",
+    "addedToCart": "Added",
     "outOfStock": "Out of stock",
     "soldOut": "Sold out",
     "bestSeller": "Best Seller",

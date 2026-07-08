@@ -1,0 +1,50 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: practical-khata-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+      - vendor_data:/var/www/html/vendor
+    environment:
+      - DB_HOST=mysql
+      - DB_DATABASE=practical_khata
+      - DB_USERNAME=root
+      - DB_PASSWORD=secret
+      - REDIS_HOST=redis
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  mysql:
+    image: mysql:8.0
+    container_name: practical-khata-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: practical_khata
+      MYSQL_ROOT_PASSWORD: secret
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-psecret"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: practical-khata-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+volumes:
+  mysql_data:
+  vendor_data:
