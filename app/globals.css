@@ -115,8 +115,10 @@ body {
 }
 .card-premium:hover {
   transform: translateY(-6px);
+  border-color: rgba(43, 86, 163, 0.25);
   box-shadow: 0 1px 2px rgba(23, 45, 85, 0.06),
-    0 12px 28px -8px rgba(23, 45, 85, 0.22);
+    0 16px 32px -10px rgba(23, 45, 85, 0.28),
+    0 0 0 1px rgba(43, 86, 163, 0.06);
 }
 
 /* strip the browser's native search clear button / extra padding so the

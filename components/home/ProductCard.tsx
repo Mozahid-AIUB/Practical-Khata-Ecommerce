@@ -19,7 +19,7 @@ export function ProductCard({ product }: { product: Product }) {
   const discount = discountPercent(product);
 
   return (
-    <div className="card-premium group relative flex flex-col overflow-hidden rounded-2xl border border-rule bg-white shadow-sm">
+    <div className="card-premium group relative flex flex-col overflow-hidden rounded-2xl border border-rule/70 bg-white shadow-[0_1px_3px_rgba(23,45,85,0.07),0_1px_2px_rgba(23,45,85,0.05)]">
       <div className="relative w-full overflow-hidden">
         <SubjectCover product={product} />
 
@@ -59,18 +59,23 @@ export function ProductCard({ product }: { product: Product }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-2 p-4">
-        <h3 className="line-clamp-1 text-sm font-semibold text-ink-900">{name}</h3>
-        <div className="flex items-baseline gap-2">
-          <span className="text-base font-bold text-brand-600">{formatPrice(product)}</span>
+      <div className="flex flex-1 flex-col gap-1.5 p-3">
+        <h3 title={name} className="line-clamp-2 min-h-[2.2em] text-xs font-semibold leading-tight text-ink-900">{name}</h3>
+        {product.subject !== "bundle" && product.subject !== "assignment" && (
+          <span className="w-fit max-w-full whitespace-nowrap rounded-md border border-brand-200 bg-brand-50 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-brand-700">
+            Drawing + Writing
+          </span>
+        )}
+        <div className="flex flex-wrap items-baseline gap-1.5">
+          <span className="text-base font-extrabold tracking-tight text-brand-700">{formatPrice(product)}</span>
           {discount && product.originalPrice && (
-            <span className="text-xs text-gray-400 line-through">৳{product.originalPrice}</span>
+            <span className="text-[11px] text-gray-400 line-through">৳{product.originalPrice}</span>
           )}
         </div>
         <button
           type="button"
           disabled={product.soldOut}
-          className="mt-auto rounded-xl bg-brand-600 px-3 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-brand-700 hover:shadow-md active:scale-[0.97] disabled:cursor-not-allowed disabled:bg-gray-300 disabled:active:scale-100"
+          className="rounded-lg bg-gradient-to-b from-brand-500 to-brand-700 px-2 py-2 text-xs font-medium text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_2px_6px_-1px_rgba(23,45,85,0.45)] transition-all duration-300 hover:from-brand-400 hover:to-brand-600 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_4px_10px_-1px_rgba(23,45,85,0.5)] active:scale-[0.97] disabled:cursor-not-allowed disabled:from-gray-300 disabled:to-gray-300 disabled:shadow-none disabled:active:scale-100"
         >
           {product.soldOut ? t("outOfStock") : t("addToCart")}
         </button>
