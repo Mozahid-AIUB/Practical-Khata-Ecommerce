@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Practical Khata — SSC & HSC হাতে লেখা প্র্যাকটিক্যাল খাতা",
   description:
     "Professional হ্যান্ডরাইটিং, perfect ফিগার ও ডায়াগ্রাম — SSC ও HSC প্র্যাকটিক্যাল খাতা সারাদেশে ২-৩ দিনে ডেলিভারি। প্রতি খাতা ৳২৯০ থেকে।",
+  verification: {
+    google: "3GtpPga3VWgafYVR_UbB6WJ7ccAU8ivIlPciGnVCyRM",
+  },
 };
 
 export default function RootLayout({
