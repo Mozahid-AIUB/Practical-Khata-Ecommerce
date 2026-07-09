@@ -87,7 +87,13 @@ export function CategoryShowcase({
         </Link>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+      <div
+        className={
+          compact
+            ? "grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
+            : "grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8"
+        }
+      >
         {visible.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

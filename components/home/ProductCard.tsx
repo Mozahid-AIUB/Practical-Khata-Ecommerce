@@ -19,7 +19,7 @@ export function ProductCard({ product }: { product: Product }) {
   const t = useTranslations("product");
   const name = product.name[locale] ?? product.name.en;
   const discount = discountPercent(product);
-  const { addItem, open: openCart } = useCart();
+  const { addItem } = useCart();
   const [status, setStatus] = useState<"idle" | "loading" | "added">("idle");
 
   async function handleAddToCart() {
@@ -28,7 +28,6 @@ export function ProductCard({ product }: { product: Product }) {
     try {
       await addItem(product.id);
       setStatus("added");
-      openCart();
       setTimeout(() => setStatus("idle"), 1500);
     } catch {
       setStatus("idle");

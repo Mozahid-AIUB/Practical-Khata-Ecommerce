@@ -30,6 +30,14 @@ export function Instagram({ className }: IconProps) {
   );
 }
 
+export function YouTube({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M23.5 6.2a2.8 2.8 0 0 0-1.95-1.98C19.6 4 12 4 12 4s-7.6 0-9.55.24A2.8 2.8 0 0 0 .5 6.2 29.7 29.7 0 0 0 0 12a29.7 29.7 0 0 0 .5 5.8 2.8 2.8 0 0 0 1.95 1.98C4.4 20 12 20 12 20s7.6 0 9.55-.24a2.8 2.8 0 0 0 1.95-1.98A29.7 29.7 0 0 0 24 12a29.7 29.7 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z" />
+    </svg>
+  );
+}
+
 export function WhatsApp({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>

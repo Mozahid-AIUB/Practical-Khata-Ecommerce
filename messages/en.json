@@ -65,7 +65,20 @@
   },
   "shop": {
     "heading": "All Khata",
-    "productsFound": "{count} products found"
+    "productsFound": "{count} products found",
+    "filters": "Filters",
+    "level": "Level",
+    "priceRange": "Price",
+    "clearFilters": "Clear all",
+    "sortBy": "Sort",
+    "sortPopular": "Best selling",
+    "sortPriceLow": "Price: low to high",
+    "sortPriceHigh": "Price: high to low",
+    "noResults": "No khata match these filters",
+    "noResultsText": "Try clearing a filter to see more.",
+    "under": "Under ৳{max}",
+    "over": "৳{min} and up",
+    "between": "৳{min} – ৳{max}"
   },
   "about": {
     "eyebrow": "About & Contact",

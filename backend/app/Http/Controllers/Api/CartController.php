@@ -98,8 +98,21 @@ class CartController extends Controller
             ? Cart::firstOrCreate(['session_token' => $sessionToken])
             : Cart::where('session_token', $sessionToken)->firstOrNew();
 
+        // frontend (localhost:3000 / vercel.app) and backend (onrender.com)
+        // are different origins, so the cart_session cookie must be sent
+        // cross-site — SameSite=Lax silently drops it on cross-origin fetch,
+        // it needs SameSite=None (which in turn requires Secure).
         $cookie = $isNewToken
-            ? Cookie::make(self::COOKIE_NAME, $sessionToken, self::COOKIE_MINUTES, sameSite: 'lax')
+            ? Cookie::make(
+                self::COOKIE_NAME,
+                $sessionToken,
+                self::COOKIE_MINUTES,
+                path: '/',
+                domain: null,
+                secure: true,
+                httpOnly: true,
+                sameSite: 'none',
+            )
             : null;
 
         return [$cart, $cookie];

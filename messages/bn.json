@@ -65,7 +65,20 @@
   },
   "shop": {
     "heading": "সব খাতা",
-    "productsFound": "{count}টি প্রোডাক্ট পাওয়া গেছে"
+    "productsFound": "{count}টি প্রোডাক্ট পাওয়া গেছে",
+    "filters": "ফিল্টার",
+    "level": "লেভেল",
+    "priceRange": "দাম",
+    "clearFilters": "সব মুছুন",
+    "sortBy": "সাজান",
+    "sortPopular": "বেস্ট সেলিং",
+    "sortPriceLow": "দাম: কম থেকে বেশি",
+    "sortPriceHigh": "দাম: বেশি থেকে কম",
+    "noResults": "এই ফিল্টারে কোনো খাতা নেই",
+    "noResultsText": "আরও দেখতে একটা ফিল্টার মুছুন।",
+    "under": "৳{max} এর নিচে",
+    "over": "৳{min} থেকে বেশি",
+    "between": "৳{min} – ৳{max}"
   },
   "about": {
     "eyebrow": "আমাদের সম্পর্কে ও যোগাযোগ",

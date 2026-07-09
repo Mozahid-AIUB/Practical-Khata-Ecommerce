@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { Facebook, Instagram } from "./SocialIcons";
+import { Facebook, Twitter, YouTube, Instagram } from "./SocialIcons";
 import { Bkash, Nagad, Rocket, SHIPPING_PARTNERS } from "./PaymentIcons";
 
 const PAYMENT_METHODS = [Bkash, Nagad, Rocket] as const;
@@ -90,8 +90,10 @@ export function Footer({
           <div>
             <p className="mb-2 font-semibold text-white">{t("followUs")}</p>
             <div className="flex gap-3">
-              <a href="#" aria-label="Facebook" className="rounded-full bg-white/10 p-2 transition hover:bg-brand-600 hover:text-white"><Facebook className="h-5 w-5" /></a>
-              <a href="#" aria-label="Instagram" className="rounded-full bg-white/10 p-2 transition hover:bg-brand-600 hover:text-white"><Instagram className="h-5 w-5" /></a>
+              <a href="https://www.facebook.com/SSCHSCPracticalKhataBD/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="rounded-full bg-[#1877F2] p-2 text-white shadow-sm transition hover:bg-[#145dbf]"><Facebook className="h-5 w-5" /></a>
+              <a href="https://www.facebook.com/SSCHSCPracticalKhataBD/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="rounded-full bg-[#FF0000] p-2 text-white shadow-sm transition hover:bg-[#cc0000]"><YouTube className="h-5 w-5" /></a>
+              <a href="https://www.facebook.com/SSCHSCPracticalKhataBD/" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="rounded-full bg-[#1DA1F2] p-2 text-white shadow-sm transition hover:bg-[#0d8de5]"><Twitter className="h-5 w-5" /></a>
+              <a href="https://www.facebook.com/SSCHSCPracticalKhataBD/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#405de6] p-2 text-white shadow-sm transition hover:opacity-90"><Instagram className="h-5 w-5" /></a>
             </div>
           </div>
         </div>

@@ -20,6 +20,7 @@ const COVERS: Record<Subject, { bg: string; fg: string; Icon: typeof Atom }> = {
 /** real note-book cover photos, keyed by "subject-level" — falls back to the drawn icon cover when absent */
 const COVER_PHOTOS: Partial<Record<string, string>> = {
   "physics-ssc": "/assets/covers/physics-ssc.jpg",
+  "physics-hsc": "/assets/covers/physics-ssc.jpg",
   "chemistry-ssc": "/assets/covers/chemistry-ssc.jpg",
   "chemistry-hsc": "/assets/covers/chemistry-ssc-alt.jpg",
   "biology-ssc": "/assets/covers/biology-ssc.jpg",
