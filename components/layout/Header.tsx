@@ -38,7 +38,7 @@ export function Header() {
   const tHeader = useTranslations("header");
   const p = (path: string) => `/${locale}${path}`;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { itemCount } = useCart();
+  const { itemCount, open: openCart } = useCart();
 
   const navItems = [
     { key: "home", href: "" },
@@ -132,7 +132,12 @@ export function Header() {
               <Heart className="h-6 w-6" />
               <span className="absolute -right-2 -top-2 rounded-full bg-accent-500 px-1.5 text-xs text-white">0</span>
             </button>
-            <button type="button" aria-label={tHeader("cart")} className="relative text-ink-800/80 hover:text-brand-600">
+            <button
+              type="button"
+              aria-label={tHeader("cart")}
+              onClick={openCart}
+              className="relative text-ink-800/80 hover:text-brand-600"
+            >
               <ShoppingCart className="h-6 w-6" />
               <span className="absolute -right-2 -top-2 rounded-full bg-accent-500 px-1.5 text-xs text-white">{itemCount}</span>
             </button>

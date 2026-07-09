@@ -131,6 +131,16 @@
     "ssc": "SSC",
     "hsc": "HSC"
   },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "emptyText": "Add a khata to get started.",
+    "browse": "Browse khata",
+    "subtotal": "Subtotal",
+    "checkout": "Proceed to checkout",
+    "remove": "Remove",
+    "close": "Close cart"
+  },
   "footer": {
     "tagline": "Your khata, our handwriting.",
     "quickLinks": "Useful Links",

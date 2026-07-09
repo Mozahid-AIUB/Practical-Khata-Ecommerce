@@ -7,6 +7,9 @@ type CartContextValue = {
   cart: Cart | null;
   itemCount: number;
   loading: boolean;
+  isOpen: boolean;
+  open: () => void;
+  close: () => void;
   addItem: (productId: string, quantity?: number) => Promise<void>;
   updateItem: (itemId: number, quantity: number) => Promise<void>;
   removeItem: (itemId: number) => Promise<void>;
@@ -17,6 +20,7 @@ const CartContext = createContext<CartContextValue | null>(null);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<Cart | null>(null);
   const [loading, setLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     getCart()
@@ -25,6 +29,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
         // guest cart simply starts empty if the backend isn't reachable yet
       });
   }, []);
+
+  const open = useCallback(() => setIsOpen(true), []);
+  const close = useCallback(() => setIsOpen(false), []);
 
   const addItem = useCallback(async (productId: string, quantity = 1) => {
     setLoading(true);
@@ -59,8 +66,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   );
 
   const value = useMemo(
-    () => ({ cart, itemCount, loading, addItem, updateItem, removeItem }),
-    [cart, itemCount, loading, addItem, updateItem, removeItem]
+    () => ({ cart, itemCount, loading, isOpen, open, close, addItem, updateItem, removeItem }),
+    [cart, itemCount, loading, isOpen, open, close, addItem, updateItem, removeItem]
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

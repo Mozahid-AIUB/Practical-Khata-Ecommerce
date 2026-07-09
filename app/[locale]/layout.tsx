@@ -8,6 +8,7 @@ import { TrustBar } from "@/components/layout/TrustBar";
 import { Footer } from "@/components/layout/Footer";
 import { KhataAssistant } from "@/components/layout/KhataAssistant";
 import { CartProvider } from "@/components/cart/CartContext";
+import { CartDrawer } from "@/components/cart/CartDrawer";
 import { getCategories, getProductsByCategory } from "@/lib/api";
 
 // display: Baloo Da 2 — sturdy, friendly Bengali display with a matching Latin
@@ -60,6 +61,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <TrustBar />
             <Footer categories={categoriesWithProducts} />
             <KhataAssistant />
+            <CartDrawer />
           </CartProvider>
         </NextIntlClientProvider>
       </body>
