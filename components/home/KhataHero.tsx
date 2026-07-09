@@ -55,7 +55,7 @@ export function KhataHero() {
           </Link>
         </div>
 
-        <p className="text-sm text-ink-800/60">{t("from")}</p>
+        <p className="currency text-sm text-ink-800/60">{t("from")}</p>
 
         <div className="flex items-start gap-2.5 rounded-lg border border-brand-100 bg-brand-50/70 px-4 py-3">
           <FileText className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" strokeWidth={2} />

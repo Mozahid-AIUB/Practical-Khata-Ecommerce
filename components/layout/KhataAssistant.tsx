@@ -80,7 +80,7 @@ export function KhataAssistant() {
             </button>
           </div>
 
-          <div className="flex max-h-80 flex-col gap-3 overflow-y-auto px-4 py-4">
+          <div className="currency flex max-h-80 flex-col gap-3 overflow-y-auto px-4 py-4">
             <div className="max-w-[85%] self-start rounded-2xl rounded-tl-sm bg-brand-50 px-3.5 py-2.5 text-sm text-ink-900">
               {t("greeting")}
             </div>
@@ -159,18 +159,18 @@ export function KhataAssistant() {
           type="button"
           aria-label={open ? t("close") : t("open")}
           onClick={() => setOpen((v) => !v)}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-700 text-white shadow-lg transition hover:bg-brand-800"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-700 text-white shadow-lg transition hover:bg-brand-800 sm:h-14 sm:w-14"
         >
-          {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+          {open ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />}
         </button>
         <a
           href={`https://wa.me/${WHATSAPP_NUMBER}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={t("whatsappLabel")}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:brightness-95"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:brightness-95 sm:h-14 sm:w-14"
         >
-          <WhatsApp className="h-7 w-7" />
+          <WhatsApp className="h-6 w-6 sm:h-7 sm:w-7" />
         </a>
       </div>
     </div>

@@ -91,7 +91,7 @@ export function ProductCard({ product }: { product: Product }) {
             Drawing + Writing
           </span>
         )}
-        <div className="flex flex-wrap items-baseline gap-1.5">
+        <div className="currency flex flex-wrap items-baseline gap-1.5">
           <span className="text-base font-extrabold tracking-tight text-brand-700">{formatPrice(product)}</span>
           {discount && product.originalPrice && (
             <span className="text-[11px] text-gray-400 line-through">৳{product.originalPrice}</span>

@@ -17,7 +17,7 @@ export default async function Home({ params }: Props) {
   );
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-6">
+    <main className="mx-auto max-w-7xl px-4 pb-24 pt-6">
       {/* sidebar · khata-page hero · bundle offer — equal-height columns (desktop) */}
       <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-[16rem_1fr_19rem]">
         <div className="hidden lg:block">

@@ -120,7 +120,7 @@ export function ShopBrowser({ categories }: { categories: CategoryWithProducts[]
                 key={b.id}
                 type="button"
                 onClick={() => setBand(active ? null : b.id)}
-                className="flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm text-ink-800 transition hover:bg-brand-50"
+                className="currency flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm text-ink-800 transition hover:bg-brand-50"
               >
                 <span
                   className={`flex h-4 w-4 items-center justify-center rounded-full border transition ${

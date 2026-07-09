@@ -32,7 +32,7 @@ export default async function ShopPage({ params, searchParams }: Props) {
       : t("heading");
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-5">
+    <main className="mx-auto max-w-7xl px-4 pb-24 pt-5">
       <h1 className="mb-4 font-display text-2xl font-bold text-ink-900 sm:text-3xl">{heading}</h1>
       <ShopBrowser categories={visible} />
     </main>

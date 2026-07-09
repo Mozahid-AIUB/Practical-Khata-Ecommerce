@@ -88,7 +88,7 @@ export function CartDrawer() {
 
                       <div className="flex min-w-0 flex-1 flex-col gap-1">
                         <p className="line-clamp-1 text-sm font-semibold text-ink-900">{name}</p>
-                        <p className="text-sm font-bold text-brand-700">{formatPrice(item.unitPrice)}</p>
+                        <p className="currency text-sm font-bold text-brand-700">{formatPrice(item.unitPrice)}</p>
 
                         <div className="mt-1 flex items-center justify-between">
                           <div className="flex items-center rounded-full border border-rule">
@@ -135,7 +135,7 @@ export function CartDrawer() {
             <div className="border-t border-rule px-5 py-4">
               <div className="mb-3 flex items-center justify-between">
                 <span className="font-semibold text-ink-900">{t("subtotal")}</span>
-                <span className="text-lg font-extrabold text-brand-700">
+                <span className="currency text-lg font-extrabold text-brand-700">
                   {formatPrice(cart?.totalPrice ?? 0)}
                 </span>
               </div>

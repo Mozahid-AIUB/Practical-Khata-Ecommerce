@@ -33,7 +33,7 @@ export function BundleCard() {
         </ul>
 
         <div>
-          <p className="flex items-baseline gap-2.5">
+          <p className="currency flex items-baseline gap-2.5">
             <span className="font-display text-4xl font-bold text-brand-600">{t("price")}</span>
             <span className="text-base font-semibold text-gray-400 line-through">{t("oldPrice")}</span>
           </p>

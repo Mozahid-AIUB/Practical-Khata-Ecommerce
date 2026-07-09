@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Baloo Da 2 / Hind Siliguri's Bengali subset is missing the ৳ (U+09F3)
+   glyph, which renders as a broken tofu box. Force a font that has it. */
+.currency {
+  font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif;
+}
+
 :root {
   /* exercise-book paper */
   --background: #fbfaf6;
